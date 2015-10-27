@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RestFullKitapNew.Core.Domain.TiposAuxliares;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,7 +17,9 @@ namespace RestFullKitapNew.Core.Domain
         public string Descricao { get; private set; }
         public int Paginas { get; private set; }
         public int CategoriaID { get; private set; }
-        
+
+        public virtual Categoria Categoria { get; private set; }
+        public virtual ICollection<Exemplar> Exemplares { get; private set; }
 
 
         private Livro()

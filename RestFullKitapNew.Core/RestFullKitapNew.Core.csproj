@@ -40,17 +40,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Domain\Autores.cs" />
+    <Compile Include="Domain\Categoria.cs" />
+    <Compile Include="Domain\Emprestimo.cs" />
     <Compile Include="Domain\Exemplar.cs" />
-    <Compile Include="Domain\ISBN.cs" />
     <Compile Include="Domain\Livro.cs" />
-    <Compile Include="Domain\Status.cs" />
+    <Compile Include="Domain\Pedido.cs" />
+    <Compile Include="Domain\TiposAuxliares\Autores.cs" />
+    <Compile Include="Domain\TiposAuxliares\IntervaloDeData.cs" />
+    <Compile Include="Domain\TiposAuxliares\ISBN.cs" />
+    <Compile Include="Domain\TiposAuxliares\Status.cs" />
+    <Compile Include="Domain\Usuario.cs" />
+    <Compile Include="Services\IAcervo.cs" />
+    <Compile Include="Services\IPesquisaAcervo.cs" />
+    <Compile Include="Services\IPesquisaPedidos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Event\" />
-    <Folder Include="Services\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
