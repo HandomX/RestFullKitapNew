@@ -7,13 +7,12 @@ using System.Threading.Tasks;
 
 namespace RestFullKitapNew.Core.Services
 {
-    public interface IPesquisaAcervo
+    public interface IPesquisaAcervo<T>
     {
-        T Todos<T>();
-        T PorTitulo<T>(string titulo);
-        T PorUsuario<T>();
-        T PorEditora<T>(string editora);
-        T PorAutor<T>(string autor);
-        T PorCategoria<T>(string categoria);
+        List<T> Todos();
+        List<T> PorTitulo(string titulo);
+        List<T> PorEditora(string editora);
+        List<T> PorAutor(string autor);
+        List<T> PorCategoria(string categoria);
     }
 }

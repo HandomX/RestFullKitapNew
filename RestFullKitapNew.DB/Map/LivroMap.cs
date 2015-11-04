@@ -15,7 +15,7 @@ namespace RestFullKitapNew.DB.Map
         {
             ToTable("Livros");
 
-            Property(e => e.ISBN.ToString())
+            Property(e => e.Isbn)
                 .IsRequired()
                 .HasColumnName("ISBN");
 
@@ -30,9 +30,17 @@ namespace RestFullKitapNew.DB.Map
                 .IsRequired()
                 .HasColumnName("Editora");
 
-            Property(l => l.Autores.ToString())
+            Property(l => l.Autores)
                 .IsRequired()
                 .HasColumnName("Autores");
+
+            Property(l => l.Descricao)
+                .HasColumnName("Descricao");
+
+            Property(l => l.Paginas)
+                .IsRequired()
+                .HasColumnName("Paginas");
+
         }
     }
 }

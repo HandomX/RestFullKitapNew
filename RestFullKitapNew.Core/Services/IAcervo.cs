@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace RestFullKitapNew.Core.Services
 {
-    public interface IAcervoPessoal : IPesquisaAcervo
+    public interface IAcervo<T> : IPesquisaAcervo<T>
     {
-        bool Adcionar(Exemplar exemplar);
-        Exemplar Remover(int exemplarID);
+        bool Adcionar(T objeto);
     }
 }
