@@ -32,3 +32,7 @@ C:\Users\michel\Documents\GitHub\RestFullKitapNew\RestFullKitapNew.DB\bin\Debug\
 C:\Users\michel\Documents\GitHub\RestFullKitapNew\RestFullKitapNew.DB\obj\Debug\RestFullKitapNew.DB.csprojResolveAssemblyReference.cache
 C:\Users\michel\Documents\GitHub\RestFullKitapNew\RestFullKitapNew.DB\obj\Debug\RestFullKitapNew.DB.dll
 C:\Users\michel\Documents\GitHub\RestFullKitapNew\RestFullKitapNew.DB\obj\Debug\RestFullKitapNew.DB.pdb
+C:\Users\michel\Documents\GitHub\RestFullKitapNew\RestFullKitapNew.DB\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\michel\Documents\GitHub\RestFullKitapNew\RestFullKitapNew.DB\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\michel\Documents\GitHub\RestFullKitapNew\RestFullKitapNew.DB\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\michel\Documents\GitHub\RestFullKitapNew\RestFullKitapNew.DB\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml

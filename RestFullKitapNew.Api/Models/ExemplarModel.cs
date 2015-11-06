@@ -11,7 +11,7 @@ namespace RestFullKitapNew.Api.Models
     {
         public int Id { get; set; }
         [Required]
-        public int UsuarioID { get; set; }
+        public string UsuarioID { get; set; }
         [Required(ErrorMessage = "Informe a qual livro este exemplar pertence")]
         public string LivroISBN { get; set; }
         public Status Status { get; set; }

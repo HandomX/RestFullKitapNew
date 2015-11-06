@@ -1,4 +1,5 @@
-﻿using RestFullKitapNew.Core.Domain;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using RestFullKitapNew.Core.Domain;
 using RestFullKitapNew.DB.Map;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace RestFullKitapNew.DB
 {
-    public class KitapContext : DbContext
+    public class KitapContext : IdentityDbContext<Usuario>
     {
         public DbSet<Categoria> Categorias { get; set; }
         public DbSet<Livro> Livros { get; set; }
@@ -28,6 +29,7 @@ namespace RestFullKitapNew.DB
             modelBuilder.Configurations.Add(new CategoriaMap());
             modelBuilder.Configurations.Add(new LivroMap());
             modelBuilder.Configurations.Add(new ExemplarMap());
+            modelBuilder.Configurations.Add(new UsuarioMap());
 
             modelBuilder.Entity<Categoria>()
                 .HasKey<int>(c => c.ID);
@@ -48,6 +50,11 @@ namespace RestFullKitapNew.DB
                 .HasRequired<Livro>(e => e.Livro)
                 .WithMany(l => l.Exemplares)
                 .HasForeignKey(e => e.LivroISBN);
+
+            modelBuilder.Entity<Exemplar>()
+                .HasRequired<Usuario>(e => e.Usuario)
+                .WithMany(u => u.Exemplares)
+                .HasForeignKey(e => e.UsuarioID);
 
         }
     }

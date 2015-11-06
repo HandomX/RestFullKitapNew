@@ -20,9 +20,9 @@ namespace RestFullKitapNew.Core.Domain
         public int Paginas { get; private set; }
         public int CategoriaID { get; private set; }
 
-        [JsonIgnore]
+        
         public Categoria Categoria { get; set; }
-        [JsonIgnore]
+        
         public ICollection<Exemplar> Exemplares { get; set; }
 
 

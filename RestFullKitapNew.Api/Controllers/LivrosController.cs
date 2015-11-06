@@ -2,9 +2,11 @@
 using RestFullKitapNew.DB.Repositorios;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Text;
 using System.Web.Http;
 
 
@@ -43,6 +45,7 @@ namespace RestFullKitapNew.Api.Controllers
             var livros = new AcervoCentral().LivrosPorTitulo(titulo);
 
             var response = Request.CreateResponse(HttpStatusCode.Accepted, livros);
+            
 
             return response;
         }

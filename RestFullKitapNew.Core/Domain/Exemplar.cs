@@ -12,19 +12,21 @@ namespace RestFullKitapNew.Core.Domain
     public class Exemplar
     {
         public int ID { get; private set; }
-        public int UsuarioID { get; private set; }
+        public string UsuarioID { get; private set; }
         public string LivroISBN { get; private set; }
         public Status Status { get; set; }
 
         [JsonIgnore]
         public virtual Livro Livro { get; private set; }
 
+        public virtual Usuario Usuario { get; private set; }
+
         private Exemplar()
         {
 
         }
 
-        public static Exemplar Criar(int usuarioID, string livroISBN, Status status)
+        public static Exemplar Criar(string usuarioID, string livroISBN, Status status)
         {
             var exemplar = new Exemplar()
             {
@@ -36,7 +38,7 @@ namespace RestFullKitapNew.Core.Domain
             return exemplar;
         }
 
-        public static Exemplar Criar(int id, int usuarioID, string livroISBN, Status status)
+        public static Exemplar Criar(int id, string usuarioID, string livroISBN, Status status)
         {
             var exemplar = new Exemplar()
             {
