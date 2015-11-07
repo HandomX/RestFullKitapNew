@@ -20,10 +20,11 @@ namespace RestFullKitapNew.Api.Controllers
         [HttpGet]
         public HttpResponseMessage TodosLivros()
         {
+
             var livros = new AcervoCentral().TodosLivros();
 
             var response = Request.CreateResponse(HttpStatusCode.Accepted, livros);
-
+            response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
             return response;
         }
 
