@@ -25,6 +25,7 @@ namespace RestFullKitapNew.Api.Controllers
 
         [Route("")]
         [HttpGet]
+        [AllowAnonymous]
         public HttpResponseMessage TodosLivros()
         {
 
@@ -37,6 +38,7 @@ namespace RestFullKitapNew.Api.Controllers
 
         [Route("")]
         [HttpGet]
+        [AllowAnonymous]
         public HttpResponseMessage LivrosPorISBN(string isbn)
         {
             var livro = MapConfig.GetLivroInformacoes(_acervoCentral.LivroPorISBN(isbn));
@@ -48,6 +50,7 @@ namespace RestFullKitapNew.Api.Controllers
 
         [Route("")]
         [HttpGet]
+        [AllowAnonymous]
         public HttpResponseMessage LivrosPorTitulo(string titulo)
         {
             var livros = MapConfig.GetLivrosInformacoes(_acervoCentral.LivrosPorTitulo(titulo));
@@ -60,6 +63,7 @@ namespace RestFullKitapNew.Api.Controllers
 
         [Route("")]
         [HttpGet]
+        [AllowAnonymous]
         public HttpResponseMessage LivrosPorAutor(string autor)
         {
             var livros = MapConfig.GetLivrosInformacoes(_acervoCentral.LivrosPorAutor(autor));
@@ -71,6 +75,7 @@ namespace RestFullKitapNew.Api.Controllers
 
         [Route("")]
         [HttpGet]
+        [AllowAnonymous]
         public HttpResponseMessage LivrosPorEditora(string editora)
         {
             var livros = MapConfig.GetLivrosInformacoes(_acervoCentral.LivrosPorEditora(editora));
@@ -82,6 +87,7 @@ namespace RestFullKitapNew.Api.Controllers
 
         [Route("")]
         [HttpGet]
+        [AllowAnonymous]
         public HttpResponseMessage LivrosPorCategoria(string categoria)
         {
             var livros = MapConfig.GetLivrosInformacoes(_acervoCentral.LivrosPorCategoria(categoria));
@@ -93,6 +99,7 @@ namespace RestFullKitapNew.Api.Controllers
 
         [Route("{isbn}/exemplares")]
         [HttpGet]
+        [AllowAnonymous]
         public HttpResponseMessage ExemplaresDoLivro([FromUri]string isbn)
         {
             var livros = MapConfig.GetExemplaresInformacoes(_acervoCentral.ExemplaresPorISBN(isbn));
