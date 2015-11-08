@@ -35,7 +35,7 @@ namespace RestFullKitapNew.Api.Controllers
             var livro = new AcervoCentral().LivroPorISBN(isbn);
             
             var response = Request.CreateResponse(HttpStatusCode.Accepted, livro);
-
+            response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
             return response;
         }
 
@@ -46,7 +46,7 @@ namespace RestFullKitapNew.Api.Controllers
             var livros = new AcervoCentral().LivrosPorTitulo(titulo);
 
             var response = Request.CreateResponse(HttpStatusCode.Accepted, livros);
-            
+            response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
 
             return response;
         }
@@ -58,7 +58,7 @@ namespace RestFullKitapNew.Api.Controllers
             var livros = new AcervoCentral().LivrosPorAutor(autor);
 
             var response = Request.CreateResponse(HttpStatusCode.Accepted, livros);
-
+            response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
             return response;
         }
 
@@ -69,7 +69,7 @@ namespace RestFullKitapNew.Api.Controllers
             var livros = new AcervoCentral().LivrosPorEditora(editora);
 
             var response = Request.CreateResponse(HttpStatusCode.Accepted, livros);
-
+            response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
             return response;
         }
 
@@ -80,7 +80,7 @@ namespace RestFullKitapNew.Api.Controllers
             var livros = new AcervoCentral().LivrosPorCategoria(categoria);
 
             var response = Request.CreateResponse(HttpStatusCode.Accepted, livros);
-
+            response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
             return response;
         }
 
@@ -91,7 +91,7 @@ namespace RestFullKitapNew.Api.Controllers
             var livros = new AcervoCentral().ExemplaresPorISBN(isbn);
 
             var response = Request.CreateResponse(HttpStatusCode.Accepted, livros);
-
+            response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
             return response;
         }
     }
