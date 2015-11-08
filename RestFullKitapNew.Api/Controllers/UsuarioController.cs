@@ -59,7 +59,7 @@ namespace RestFullKitapNew.Api.Controllers
         [HttpGet]
         public HttpResponseMessage TodosExemplares([FromUri] string nameUser)
         {
-            var exemplares = MapConfig.GetExemplaresInformacoes(repoAcervoCentral.TodosExemplares());
+            var exemplares = repoAcervoCentral.TodosExemplares();
 
             var response = Request.CreateResponse(HttpStatusCode.Accepted, exemplares);
 
@@ -70,7 +70,7 @@ namespace RestFullKitapNew.Api.Controllers
         [Route("{nameUser}/exemplares")]
         public HttpResponseMessage ExemplaresPorISBN([FromUri]string nameUser, string isbn)
         {
-            var livros = MapConfig.GetExemplaresInformacoes(repoAcervoCentral.ExemplaresPorISBN(isbn));
+            var livros = repoAcervoCentral.ExemplaresPorISBN(isbn);
 
             var response = Request.CreateResponse(HttpStatusCode.Accepted, livros);
 
@@ -81,7 +81,7 @@ namespace RestFullKitapNew.Api.Controllers
         [HttpGet]
         public HttpResponseMessage ExemplaresPorTitulo([FromUri]string nameUser, string titulo)
         {
-            var exemplares = MapConfig.GetExemplaresInformacoes(repoAcervoCentral.ExemplaresPorTitulo(titulo));
+            var exemplares = repoAcervoCentral.ExemplaresPorTitulo(titulo);
 
             var response = Request.CreateResponse(HttpStatusCode.Accepted, exemplares);
 
@@ -92,7 +92,7 @@ namespace RestFullKitapNew.Api.Controllers
         [HttpGet]
         public HttpResponseMessage ExemplaresPorAutor([FromUri]string nameUser, string autor)
         {
-            var exemplares = MapConfig.GetExemplaresInformacoes(repoAcervoCentral.ExemplaresPorAutor(autor));
+            var exemplares = repoAcervoCentral.ExemplaresPorAutor(autor);
 
             var response = Request.CreateResponse(HttpStatusCode.Accepted, exemplares);
 
@@ -103,7 +103,7 @@ namespace RestFullKitapNew.Api.Controllers
         [HttpGet]
         public HttpResponseMessage ExemplaresPorEditora([FromUri]string nameUser, string editora)
         {
-            var exemplares = MapConfig.GetExemplaresInformacoes(repoAcervoCentral.ExemplaresPorEditora(editora));
+            var exemplares = repoAcervoCentral.ExemplaresPorEditora(editora);
 
             var response = Request.CreateResponse(HttpStatusCode.Accepted, exemplares);
 
@@ -114,7 +114,7 @@ namespace RestFullKitapNew.Api.Controllers
         [HttpGet]
         public HttpResponseMessage ExemplaresPorCategoria([FromUri]string nameUser, string categoria)
         {
-            var exemplares = MapConfig.GetExemplaresInformacoes(repoAcervoCentral.ExemplaresPorCategoria(categoria));
+            var exemplares = repoAcervoCentral.ExemplaresPorCategoria(categoria);
 
             var response = Request.CreateResponse(HttpStatusCode.Accepted, exemplares);
 
