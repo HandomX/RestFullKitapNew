@@ -31,7 +31,7 @@ namespace RestFullKitapNew.Api.Controllers
             var usuario = await repoUser.BuscarUserPorNome(nameUser);
 
             var response = Request.CreateResponse(HttpStatusCode.Accepted, usuario);
-
+            response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
             return response;
         }
 
@@ -49,7 +49,7 @@ namespace RestFullKitapNew.Api.Controllers
                 repoAcervoCentral.Adcionar(exemplar, livro);
 
                 var response = Request.CreateResponse(HttpStatusCode.Created, exemplar);
-
+                response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
                 return response;
             }
             return Request.CreateResponse(HttpStatusCode.BadRequest, new { mensagem = "modelo invalido" });
@@ -62,7 +62,7 @@ namespace RestFullKitapNew.Api.Controllers
             var exemplares = MapConfig.GetExemplaresInformacoes(repoAcervoCentral.TodosExemplares(nameUser));
 
             var response = Request.CreateResponse(HttpStatusCode.Accepted, exemplares);
-
+            response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
             return response;
         }
 
@@ -84,7 +84,7 @@ namespace RestFullKitapNew.Api.Controllers
             var exemplares = MapConfig.GetExemplaresInformacoes(repoAcervoCentral.ExemplaresPorTitulo(nameUser, titulo));
 
             var response = Request.CreateResponse(HttpStatusCode.Accepted, exemplares);
-
+            response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
             return response;
         }
 
@@ -95,7 +95,7 @@ namespace RestFullKitapNew.Api.Controllers
             var exemplares = MapConfig.GetExemplaresInformacoes(repoAcervoCentral.ExemplaresPorAutor(nameUser, autor));
 
             var response = Request.CreateResponse(HttpStatusCode.Accepted, exemplares);
-
+            response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
             return response;
         }
 
@@ -106,7 +106,7 @@ namespace RestFullKitapNew.Api.Controllers
             var exemplares = MapConfig.GetExemplaresInformacoes(repoAcervoCentral.ExemplaresPorEditora(nameUser, editora));
 
             var response = Request.CreateResponse(HttpStatusCode.Accepted, exemplares);
-
+            response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
             return response;
         }
 
@@ -117,7 +117,7 @@ namespace RestFullKitapNew.Api.Controllers
             var exemplares = MapConfig.GetExemplaresInformacoes(repoAcervoCentral.ExemplaresPorCategoria(nameUser, categoria));
 
             var response = Request.CreateResponse(HttpStatusCode.Accepted, exemplares);
-
+            response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
             return response;
         }
 
