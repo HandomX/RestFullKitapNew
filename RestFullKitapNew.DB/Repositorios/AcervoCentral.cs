@@ -79,67 +79,43 @@ namespace RestFullKitapNew.DB.Repositorios
 
         public List<Exemplar> TodosExemplares()
         {
-            var exemplares = _KitapDB.Exemplares.Include(l => l.Livro);
+            var exemplares = _KitapDB.Exemplares.Include(l => l.Livro).Include(l => l.Usuario);
 
             return exemplares.ToList<Exemplar>();
         }
 
         public List<Exemplar> ExemplaresPorISBN(string isbn)
         {
-            var livro = this.LivroPorISBN(isbn);
-            return livro.Exemplares.ToList<Exemplar>();
+            var exemplares = _KitapDB.Exemplares.Include(e => e.Livro).Include(e => e.Usuario).Where(e => e.Livro.Isbn == isbn);
+            return exemplares.ToList<Exemplar>();
         }
 
         public List<Exemplar> ExemplaresPorTitulo(string titulo)
         {
-            var livros = this.LivrosPorTitulo(titulo);
-            var exemplares = new List<Exemplar>();
+            var exemplares = _KitapDB.Exemplares.Include(e => e.Livro).Include(e => e.Usuario).Where(e => e.Livro.Titulo == titulo);
 
-            foreach(var livro in livros)
-            {
-                exemplares.AddRange(livro.Exemplares);
-            }
-
-            return exemplares;
+            return exemplares.ToList<Exemplar>();
         }
 
         public List<Exemplar> ExemplaresPorAutor(string autor)
         {
-            var livros = this.LivrosPorAutor(autor);
-            var exemplares = new List<Exemplar>();
+            var exemplares = _KitapDB.Exemplares.Include(e => e.Livro).Include(e => e.Usuario).Where(e => e.Livro.Autores.Contains(autor));
 
-            foreach (var livro in livros)
-            {
-                exemplares.AddRange(livro.Exemplares);
-            }
-
-            return exemplares;
+            return exemplares.ToList<Exemplar>();
         }
 
         public List<Exemplar> ExemplaresPorEditora(string editora)
         {
-            var livros = this.LivrosPorEditora(editora);
-            var exemplares = new List<Exemplar>();
+            var exemplares = _KitapDB.Exemplares.Include(e => e.Livro).Include(e => e.Usuario).Where(e => e.Livro.Editora == editora);
 
-            foreach (var livro in livros)
-            {
-                exemplares.AddRange(livro.Exemplares);
-            }
-
-            return exemplares;
+            return exemplares.ToList<Exemplar>();
         }
 
         public List<Exemplar> ExemplaresPorCategoria(string categoria)
         {
-            var livros = this.LivrosPorCategoria(categoria);
-            var exemplares = new List<Exemplar>();
+            var exemplares = _KitapDB.Exemplares.Include(e => e.Livro).Include(e=> e.Livro.Categoria).Include(e => e.Usuario).Where(e => e.Livro.Categoria.Nome == categoria);
 
-            foreach (var livro in livros)
-            {
-                exemplares.AddRange(livro.Exemplares);
-            }
-
-            return exemplares;
+            return exemplares.ToList<Exemplar>();
         }
 
         public void Dispose()
