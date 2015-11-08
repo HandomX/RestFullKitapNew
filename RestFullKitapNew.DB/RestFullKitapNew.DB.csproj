@@ -73,7 +73,6 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorios\AcervoCentral.cs" />
-    <Compile Include="Repositorios\AcervoPessoal.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

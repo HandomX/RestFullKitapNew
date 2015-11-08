@@ -175,9 +175,11 @@
     </Compile>
     <Compile Include="Identity\SimpleAuthorizationServerProvider.cs" />
     <Compile Include="Identity\UsuarioAuthRepositorio.cs" />
+    <Compile Include="Models\ExemplarInformacaoModel.cs" />
+    <Compile Include="Models\LivroInformacaoesModel.cs" />
     <Compile Include="Models\UserCadastroModel.cs" />
-    <Compile Include="Models\LivroModel.cs" />
-    <Compile Include="Models\ExemplarModel.cs" />
+    <Compile Include="Models\LivroCadastroModel.cs" />
+    <Compile Include="Models\ExemplarCadastroModel.cs" />
     <Compile Include="Models\UserInfomacaoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -27,6 +27,5 @@ C:\Users\Familia\Documents\GitHub\RestFullKitapNew\RestFullKitapNew.Core\bin\Deb
 C:\Users\Familia\Documents\GitHub\RestFullKitapNew\RestFullKitapNew.Core\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 C:\Users\Familia\Documents\GitHub\RestFullKitapNew\RestFullKitapNew.Core\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\Users\Familia\Documents\GitHub\RestFullKitapNew\RestFullKitapNew.Core\bin\Debug\Newtonsoft.Json.xml
-C:\Users\Familia\Documents\GitHub\RestFullKitapNew\RestFullKitapNew.Core\obj\Debug\RestFullKitapNew.Core.csprojResolveAssemblyReference.cache
 C:\Users\Familia\Documents\GitHub\RestFullKitapNew\RestFullKitapNew.Core\obj\Debug\RestFullKitapNew.Core.dll
 C:\Users\Familia\Documents\GitHub\RestFullKitapNew\RestFullKitapNew.Core\obj\Debug\RestFullKitapNew.Core.pdb
