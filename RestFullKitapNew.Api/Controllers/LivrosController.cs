@@ -1,4 +1,5 @@
-﻿using RestFullKitapNew.Core.Domain;
+﻿using RestFullKitapNew.Api.App_Start;
+using RestFullKitapNew.Core.Domain;
 using RestFullKitapNew.DB.Repositorios;
 using System;
 using System.Collections.Generic;
@@ -15,13 +16,19 @@ namespace RestFullKitapNew.Api.Controllers
     [RoutePrefix("api/livros")]
     public class LivrosController : ApiController
     {
+        private AcervoCentral _acervoCentral;
+
+        public LivrosController()
+        {
+            _acervoCentral = new AcervoCentral();
+        }
 
         [Route("")]
         [HttpGet]
         public HttpResponseMessage TodosLivros()
         {
 
-            var livros = new AcervoCentral().TodosLivros();
+            var livros = MapConfig.GetLivrosInformacoes(_acervoCentral.TodosLivros());
 
             var response = Request.CreateResponse(HttpStatusCode.Accepted, livros);
             response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
@@ -32,7 +39,7 @@ namespace RestFullKitapNew.Api.Controllers
         [HttpGet]
         public HttpResponseMessage LivrosPorISBN(string isbn)
         {
-            var livro = new AcervoCentral().LivroPorISBN(isbn);
+            var livro = MapConfig.GetLivroInformacoes(_acervoCentral.LivroPorISBN(isbn));
             
             var response = Request.CreateResponse(HttpStatusCode.Accepted, livro);
             response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
@@ -43,7 +50,7 @@ namespace RestFullKitapNew.Api.Controllers
         [HttpGet]
         public HttpResponseMessage LivrosPorTitulo(string titulo)
         {
-            var livros = new AcervoCentral().LivrosPorTitulo(titulo);
+            var livros = MapConfig.GetLivrosInformacoes(_acervoCentral.LivrosPorTitulo(titulo));
 
             var response = Request.CreateResponse(HttpStatusCode.Accepted, livros);
             response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
@@ -55,7 +62,7 @@ namespace RestFullKitapNew.Api.Controllers
         [HttpGet]
         public HttpResponseMessage LivrosPorAutor(string autor)
         {
-            var livros = new AcervoCentral().LivrosPorAutor(autor);
+            var livros = MapConfig.GetLivrosInformacoes(_acervoCentral.LivrosPorAutor(autor));
 
             var response = Request.CreateResponse(HttpStatusCode.Accepted, livros);
             response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
@@ -66,7 +73,7 @@ namespace RestFullKitapNew.Api.Controllers
         [HttpGet]
         public HttpResponseMessage LivrosPorEditora(string editora)
         {
-            var livros = new AcervoCentral().LivrosPorEditora(editora);
+            var livros = MapConfig.GetLivrosInformacoes(_acervoCentral.LivrosPorEditora(editora));
 
             var response = Request.CreateResponse(HttpStatusCode.Accepted, livros);
             response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
@@ -77,7 +84,7 @@ namespace RestFullKitapNew.Api.Controllers
         [HttpGet]
         public HttpResponseMessage LivrosPorCategoria(string categoria)
         {
-            var livros = new AcervoCentral().LivrosPorCategoria(categoria);
+            var livros = MapConfig.GetLivrosInformacoes(_acervoCentral.LivrosPorCategoria(categoria));
 
             var response = Request.CreateResponse(HttpStatusCode.Accepted, livros);
             response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
@@ -88,7 +95,7 @@ namespace RestFullKitapNew.Api.Controllers
         [HttpGet]
         public HttpResponseMessage ExemplaresDoLivro([FromUri]string isbn)
         {
-            var livros = new AcervoCentral().ExemplaresPorISBN(isbn);
+            var livros = MapConfig.GetExemplaresInformacoes(_acervoCentral.ExemplaresPorISBN(isbn));
 
             var response = Request.CreateResponse(HttpStatusCode.Accepted, livros);
             response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });

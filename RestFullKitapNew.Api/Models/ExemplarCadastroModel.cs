@@ -7,14 +7,16 @@ using System.Web;
 
 namespace RestFullKitapNew.Api.Models
 {
-    public class ExemplarModel 
+    public class ExemplarCadastroModel 
     {
         public int Id { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Informe o id do usuario que tem este exemplar.")]
+
         public string UsuarioID { get; set; }
-        [Required(ErrorMessage = "Informe a qual livro este exemplar pertence")]
+        [Required(ErrorMessage = "Informe a qual livro este exemplar pertence.")]
         public string LivroISBN { get; set; }
         public Status Status { get; set; }
-        public LivroModel Livro { get; set; }
+        [Required(ErrorMessage = "Informe os dados do livro do exemplar.")]
+        public LivroCadastroModel Livro { get; set; }
     }
 }

@@ -6,7 +6,7 @@ using System.Web;
 
 namespace RestFullKitapNew.Api.Models
 {
-    public class LivroModel
+    public class LivroCadastroModel
     {
         [Required(ErrorMessage ="Informe o ISBN do livro.")]
         public string Isbn { get; set; }

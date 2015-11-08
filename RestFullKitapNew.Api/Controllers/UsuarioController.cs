@@ -37,7 +37,7 @@ namespace RestFullKitapNew.Api.Controllers
 
         [Route("{nameUser}/exemplar")]
         [HttpPost]
-        public HttpResponseMessage Adicionar([FromUri]string nameUser, ExemplarModel exemplarModel)
+        public HttpResponseMessage Adicionar([FromUri]string nameUser, ExemplarCadastroModel exemplarModel)
         {
             if (ModelState.IsValid)
             {

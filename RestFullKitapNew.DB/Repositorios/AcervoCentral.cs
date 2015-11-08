@@ -37,35 +37,35 @@ namespace RestFullKitapNew.DB.Repositorios
         
         public List<Livro> TodosLivros()
         {
-            var livros = _KitapDB.Livros.Include(l => l.Exemplares);
+            var livros = _KitapDB.Livros.Include(l => l.Categoria).Include(l => l.Exemplares);
 
             return livros.ToList<Livro>();
         }
 
         public Livro LivroPorISBN(string isbn)
         {
-            var livro = _KitapDB.Livros.Include(l => l.Exemplares).Where(l => l.Isbn == isbn).FirstOrDefault();
+            var livro = _KitapDB.Livros..Include(l => l.Categoria).Include(l => l.Exemplares).Where(l => l.Isbn == isbn).FirstOrDefault();
             
             return livro;
         }
 
         public List<Livro> LivrosPorTitulo(string titulo)
         {
-            var livros = _KitapDB.Livros.Include(l => l.Exemplares).Where(l => l.Titulo.Contains(titulo));
+            var livros = _KitapDB.Livros..Include(l => l.Categoria).Include(l => l.Exemplares).Where(l => l.Titulo.Contains(titulo));
 
             return livros.ToList<Livro>();
         }
 
         public List<Livro> LivrosPorEditora(string editora)
         {
-            var livros = _KitapDB.Livros.Include(l => l.Exemplares).Where(l => l.Editora.Contains(editora));
+            var livros = _KitapDB.Livros..Include(l => l.Categoria).Include(l => l.Exemplares).Where(l => l.Editora.Contains(editora));
 
             return livros.ToList<Livro>();
         }
 
         public List<Livro> LivrosPorAutor(string autor)
         {
-            var livros = _KitapDB.Livros.Include(l => l.Exemplares).Where(l => l.Autores.Contains(autor));
+            var livros = _KitapDB.Livros..Include(l => l.Categoria).Include(l => l.Exemplares).Where(l => l.Autores.Contains(autor));
 
             return livros.ToList<Livro>();
         }
