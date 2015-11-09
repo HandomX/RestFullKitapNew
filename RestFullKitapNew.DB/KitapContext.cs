@@ -15,6 +15,8 @@ namespace RestFullKitapNew.DB
         public DbSet<Categoria> Categorias { get; set; }
         public DbSet<Livro> Livros { get; set; }
         public DbSet<Exemplar> Exemplares { get; set; }
+        public DbSet<Pedido> Pedidos { get; set; }
+        public DbSet<Emprestimo> Emprestimos { get; set; }
 
         public KitapContext() : base("KitapConnection")
         {

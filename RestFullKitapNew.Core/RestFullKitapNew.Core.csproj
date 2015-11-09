@@ -69,7 +69,7 @@
     <Compile Include="Domain\Pedido.cs" />
     <Compile Include="Domain\TiposAuxliares\Autores.cs" />
     <Compile Include="Domain\TiposAuxliares\IntervaloDeData.cs" />
-    <Compile Include="Domain\TiposAuxliares\ISBN.cs" />
+    <Compile Include="Domain\TiposAuxliares\ISBNValidador.cs" />
     <Compile Include="Domain\TiposAuxliares\Status.cs" />
     <Compile Include="Domain\Usuario.cs" />
     <Compile Include="Services\IAcervo.cs" />
