@@ -14,6 +14,7 @@ namespace RestFullKitapNew.Api.Models
 
         public string UsuarioID { get; set; }
         [Required(ErrorMessage = "Informe a qual livro este exemplar pertence.")]
+        [ISBNValidador]
         public string LivroISBN { get; set; }
         public Status Status { get; set; }
         [Required(ErrorMessage = "Informe os dados do livro do exemplar.")]
