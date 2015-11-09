@@ -24,7 +24,7 @@ namespace RestFullKitapNew.Api
 
             
             
-            config.Formatters.Remove(config.Formatters.XmlFormatter);
+            
             var jsonFormatter = config.Formatters.JsonFormatter;
 
             
