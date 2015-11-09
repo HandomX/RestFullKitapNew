@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RestFullKitapNew.Core.Domain.TiposAuxliares;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace RestFullKitapNew.Api.Models
     public class LivroCadastroModel
     {
         [Required(ErrorMessage ="Informe o ISBN do livro.")]
+        [ISBNValidador]
         public string Isbn { get; set; }
         public string ImagemLink { get; set; }
         [Required(ErrorMessage = "Informe o titulo do livro.")]

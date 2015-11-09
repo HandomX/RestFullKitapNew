@@ -1,31 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
 namespace RestFullKitapNew.Core.Domain.TiposAuxliares
 {
-    public class ISBN
+    public class ISBNValidador : ValidationAttribute
     {
 
         public string Isbn { get; private set; }
 
-        private ISBN()
+        public ISBNValidador()
         {
-            
+            ErrorMessage = "ISBN Invalido por favor forneça um valido.";
         }
 
-        public ISBN(string isbn)
+        public override bool IsValid(object value)
         {
-            this.Isbn = isbn;
+            ErrorMessage = "ISBN Invalido por favor forneça um valido.";
+            var isbn = value as string;
+            if(isbn != null)
+            {
+                this.Isbn = isbn;
+                return (VerificarContemSomenteNumero() & VerificarTipoEhCalculaDigitoVerificadorDoISBN());
+            }
+                
+            return true;
         }
-
-        public bool isValido()
-        {
-            return (VerificarContemSomenteNumero() & VerificarTipoEhCalculaDigitoVerificadorDoISBN());
-        }
-
+        
         private bool VerificarContemSomenteNumero()
         {
             string regex = @"^\d{10}$|^\d{13}$";
