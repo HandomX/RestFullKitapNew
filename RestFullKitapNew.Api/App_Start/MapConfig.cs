@@ -35,7 +35,7 @@ namespace RestFullKitapNew.Api.App_Start
         }
 
         public static LivroInformacaoesModel GetLivroInformacoes(Livro livro)
-        {
+        {            
             var livroModel = new LivroInformacaoesModel()
             {
                 Isbn = livro.Isbn,

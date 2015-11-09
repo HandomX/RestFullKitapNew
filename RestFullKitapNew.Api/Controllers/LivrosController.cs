@@ -39,11 +39,21 @@ namespace RestFullKitapNew.Api.Controllers
         [HttpGet]
         public HttpResponseMessage LivrosPorISBN(string isbn)
         {
-            var livro = MapConfig.GetLivroInformacoes(_acervoCentral.LivroPorISBN(isbn));
-            
-            var response = Request.CreateResponse(HttpStatusCode.Accepted, livro);
+            HttpResponseMessage response = null;
+            var livro = _acervoCentral.LivroPorISBN(isbn);
+            if (livro == null)
+                response = Request.CreateResponse(HttpStatusCode.Accepted, new Object());
+            else
+            {
+                var livroR = MapConfig.GetLivroInformacoes(livro);
+                response = Request.CreateResponse(HttpStatusCode.Accepted, livroR);
+            }
+                
+
+
             response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
             return response;
+
         }
 
         [Route("")]
