@@ -118,6 +118,7 @@ namespace RestFullKitapNew.Api.Controllers
 
             var response = Request.CreateResponse(HttpStatusCode.Accepted, exemplares);
             response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
+            
             return response;
         }
 

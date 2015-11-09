@@ -26,7 +26,7 @@ namespace RestFullKitapNew.Api.App_Start
             var exemplarModel = new ExemplarInformacaoModel()
             {
                 ExemplarID = exemplar.ID,
-                Livro = exemplar.Livro.Titulo,
+                Livro = exemplar.Livro.Isbn,
                 Usuario = exemplar.Usuario.UserName,
                 Status = exemplar.Status.ToString()
             };
