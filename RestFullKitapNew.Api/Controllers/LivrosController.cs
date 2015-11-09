@@ -42,7 +42,7 @@ namespace RestFullKitapNew.Api.Controllers
             HttpResponseMessage response = null;
             var livro = _acervoCentral.LivroPorISBN(isbn);
             if (livro == null)
-                response = Request.CreateResponse(HttpStatusCode.Accepted, new Object());
+                response = Request.CreateResponse(HttpStatusCode.Accepted, new { mensagem = "Nenhum livro encontrado." });
             else
             {
                 var livroR = MapConfig.GetLivroInformacoes(livro);
